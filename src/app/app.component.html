@@ -1,4 +1,6 @@
 <h1 [hidden]="hiddenTitle">{{title}}</h1>
 <h2>Count: {{count}}</h2>
 <button (click)="increaseCount()">increase</button>
-<p [style.color]="count < 5 ? 'red' : 'blue'">{{name}}</p>
+<p [style.color]="color">{{name}}</p>
+<!-- <input type="text" [(ngModel)]="color"> -->
+<input type="text" (input)="changeColor($event)">

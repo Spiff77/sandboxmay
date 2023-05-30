@@ -18,8 +18,14 @@ export class AppComponent {
     lastname:'Lhomme'
   }
 
+  color = 'blue';
+
   increaseCount() {
     this.count++
+    this.color = 'yellow'
   }
 
+  changeColor(event: Event) {
+    this.color = (event.target as HTMLInputElement).value
+  }
 }
