@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Person} from './model/person.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sandbox';
+  title = 'Ma sandbox'
+  name = 'Thomas Lhomme'
+  textColor = 'green'
+  hiddenTitle = false
+  count = 0;
+  person: Person = {
+    age: 37,
+    firstname: 'Thomas',
+    lastname:'Lhomme'
+  }
+
+  increaseCount() {
+    this.count++
+  }
+
 }
