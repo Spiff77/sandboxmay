@@ -18,6 +18,8 @@ export class AppComponent {
     lastname:'Lhomme'
   }
 
+  names: string[] = ['Giovanni', 'Daniel', 'Moncef', 'Florian']
+
   color = 'blue';
 
   increaseCount() {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {Person} from '../model/person.model';
 
 @Component({
@@ -10,17 +10,23 @@ export class MainParentComponent {
   firstname = 'Thomas'
   personSelected:Person | undefined
 
+  persons: Person[] = [
+    {
+      age: 37,
+      lastname: 'Lhomme',
+      firstname: 'Thomas'
+    },
+    {
+      age: 14,
+      lastname: 'Balavoine',
+      firstname: 'Daniel'
+    }
+  ]
 
-  myPerson1: Person = {
-    age: 37,
-    lastname: 'Lhomme',
-    firstname: 'Thomas'
-  }
 
-  myPerson2: Person = {
-    age: 33,
-    lastname: 'Balavoine',
-    firstname: 'Daniel'
+  @HostListener('click')
+  addPerson(){
+    this.persons.push({firstname:'UNKNOW', lastname: 'UNKNOW', age:0})
   }
 
   getInfoFromChild(Person: Person){

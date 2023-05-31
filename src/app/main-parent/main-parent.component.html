@@ -1,4 +1,5 @@
-<p>Vous avez cliqué sur {{personSelected?.firstname}} {{personSelected?.lastname}}</p>
-<app-child (outputVar)="getInfoFromChild($event)" [pers]="myPerson1" ></app-child>
-<app-child (outputVar)="getInfoFromChild($event)" [pers]="myPerson2" ></app-child>
+<p [hidden]="!personSelected">Vous avez cliqué sur {{personSelected?.firstname}} {{personSelected?.lastname}}</p>
+
+<app-child *ngFor="let per of persons" (outputVar)="getInfoFromChild($event)" [pers]="per" ></app-child>
+
 

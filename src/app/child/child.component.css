@@ -2,6 +2,7 @@
   border: 1px solid deepskyblue;
   display: block;
   background-color: #8fd3e5;
+  cursor: pointer;
 }
 h5{
   color: darkred;
