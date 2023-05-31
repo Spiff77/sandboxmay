@@ -1,2 +1,3 @@
 <p>child works!</p>
-<h5>Hello {{pers.firstname}} {{pers.lastname}}</h5>
+<h5>Hello {{pers?.firstname}} {{pers?.lastname}}</h5>
+<button (click)="sendFullNameToParent()">Send infos to parent</button>

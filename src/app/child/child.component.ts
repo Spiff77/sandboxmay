@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Person} from '../model/person.model';
 
 @Component({
@@ -9,10 +9,12 @@ import {Person} from '../model/person.model';
 export class ChildComponent {
 
   @Input()
-  pers: Person = {
-    age: 0,
-    lastname: '',
-    firstname: ''
-  }
+  pers!: Person;
 
+  @Output()
+  outputVar: EventEmitter<Person> = new EventEmitter<Person>();
+
+  sendFullNameToParent(){
+    this.outputVar.emit(this.pers)
+  }
 }
