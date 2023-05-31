@@ -1,3 +1,7 @@
 <p>secondary-parent works!</p>
-<app-child></app-child>
-<app-child></app-child>
+<table border="1" >
+  <tr *ngFor="let n of names; let i=index">
+    <td>{{i}}</td>
+    <td>{{n}}</td>
+  </tr>
+</table>

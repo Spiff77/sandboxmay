@@ -1,4 +1,7 @@
 <h1 [hidden]="hiddenTitle">{{title}}</h1>
+<ul>
+  <li *ngFor="let n of names">{{n}}</li>
+</ul>
 <h2>Count: {{count}}</h2>
 <button (click)="increaseCount()">increase</button>
 <p [style.color]="color">{{name}}</p>
@@ -6,6 +9,3 @@
 <input type="text" (input)="changeColor($event)">
 <app-main-parent></app-main-parent>
 <app-secondary-parent></app-secondary-parent>
-<ul>
-  <li *ngFor="let n of names">{{n}}</li>
-</ul>

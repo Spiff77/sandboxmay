@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Person} from './model/person.model';
+import {NameService} from './name.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Ma sandbox'
   name = 'Thomas Lhomme'
   textColor = 'green'
@@ -22,6 +23,12 @@ export class AppComponent {
 
   color = 'blue';
 
+  constructor(private nameService: NameService) {}
+
+  ngOnInit() {
+    this.names = this.nameService.names
+  }
+
   increaseCount() {
     this.count++
     this.color = 'yellow'
@@ -30,4 +37,6 @@ export class AppComponent {
   changeColor(event: Event) {
     this.color = (event.target as HTMLInputElement).value
   }
+
+
 }

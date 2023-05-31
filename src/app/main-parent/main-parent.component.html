@@ -1,4 +1,4 @@
-<p [hidden]="!personSelected">Vous avez cliqué sur {{personSelected?.firstname}} {{personSelected?.lastname}}</p>
+<p *ngIf="personSelected">Vous avez cliqué sur {{personSelected.firstname}} {{personSelected.lastname}}</p>
 
 <app-child *ngFor="let per of persons" (outputVar)="getInfoFromChild($event)" [pers]="per" ></app-child>
 
