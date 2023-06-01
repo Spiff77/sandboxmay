@@ -1,0 +1,6 @@
+<p>users works!</p>
+<ul>
+  <li *ngFor="let u of users">{{u.name}} ({{u.username}})</li>
+</ul>
+
+<pre *ngIf="users.length > 0">First user: {{users[0].username}}</pre>

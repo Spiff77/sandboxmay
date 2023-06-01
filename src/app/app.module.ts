@@ -7,6 +7,8 @@ import { MainParentComponent } from './main-parent/main-parent.component';
 import { ChildComponent } from './child/child.component';
 import { SecondaryParentComponent } from './secondary-parent/secondary-parent.component';
 import { CountletterPipe } from './countletter.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { CountletterPipe } from './countletter.pipe';
     ChildComponent,
     SecondaryParentComponent,
     CountletterPipe,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

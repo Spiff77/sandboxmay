@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Person} from './model/person.model';
 import {NameService} from './name.service';
 import {BehaviorSubject, filter, interval, map, Subject} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -33,26 +34,14 @@ export class AppComponent implements OnInit{
 
   color = 'blue';
 
-  constructor(private nameService: NameService) {}
+  constructor(private nameService: NameService, private http: HttpClient) {}
 
   ngOnInit() {
-    interval(1000)
-      .pipe(
-        filter(v => v % 10 == 0),
-        map(v => v * 5)
-      ).subscribe(v => console.log(v))
 
-    let s:BehaviorSubject<string> = new BehaviorSubject('val');
-
-    s.subscribe(v => console.log(v))
-    s.next('Toto')
-    s.next('Toto')
-    s.next('Toto')
-
+    this.http.get('https://jsonplaceholder.typicode.com/users')
+      .subscribe(v => console.log(v))
 
     this.names = this.nameService.names
-
-
   }
 
   increaseCount() {
