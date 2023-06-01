@@ -13,9 +13,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<User[]> {
-    return this.http.get<User[]>(this.url).pipe(map(v => {
-      v.push({name: 'lambda', username: 'lambda'})
-      return v
-    }))
+    return this.http.get<User[]>(this.url)
   }
 }
