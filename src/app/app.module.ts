@@ -9,6 +9,16 @@ import { SecondaryParentComponent } from './secondary-parent/secondary-parent.co
 import { CountletterPipe } from './countletter.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
+import { HomeComponent } from './home/home.component';
+import {RouterModule, Routes} from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
+
+const routes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: 'main', component: MainParentComponent},
+  {path: 'user', component: UsersComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+]
 
 @NgModule({
   declarations: [
@@ -18,11 +28,14 @@ import { UsersComponent } from './users/users.component';
     SecondaryParentComponent,
     CountletterPipe,
     UsersComponent,
+    HomeComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
