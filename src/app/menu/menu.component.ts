@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  names = ['Florian', 'Daniel']
+
 }
+/**
+  /home -> HomeComponent
+  /products -> ProductList --> Affiche une liste de produit, le clique sur un lien redirige vers le détail de ce produit
+  /products/:id --> DetailProduct
+  / -- redirect --> /home
+ */
+
+/*
+STEPS:
+ - Route app.module.ts
+ - Créer le composant
+  - Récuperer la variable d'url  ex: 9  de '/products/9'
+ - Liens sur productComponent et lien vers list sur detailComponent
+ - Méthode findOne(id: number): Observable<Produit> dans ProductService
+ */

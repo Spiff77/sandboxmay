@@ -12,11 +12,13 @@ import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { SayHelloComponent } from './say-hello/say-hello.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'main', component: MainParentComponent},
   {path: 'user', component: UsersComponent},
+  {path: 'hello/:name', component: SayHelloComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ]
 
@@ -30,6 +32,7 @@ const routes: Routes = [
     UsersComponent,
     HomeComponent,
     MenuComponent,
+    SayHelloComponent,
   ],
   imports: [
     BrowserModule,

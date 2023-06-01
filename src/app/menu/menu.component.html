@@ -2,4 +2,7 @@
 <a href="#" routerLink="/main">Main</a><br>
 <a href="#" routerLink="/home">Home</a><br>
 <a href="#" routerLink="/user">User</a>
+<a href="#" *ngFor="let n of names" [routerLink]="['/hello', n]">Say hello to {{n}}</a>
+
 <br>
+
