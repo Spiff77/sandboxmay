@@ -5,8 +5,10 @@ import {concatAll, delay, from, interval, map, mergeMap, of, Subscription, toArr
 import {UserService} from '../user.service';
 
 export interface User {
+  id: number,
   name: string,
   username: string;
+  boss?: User;
 }
 
 @Component({
