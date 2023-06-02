@@ -1,4 +1,11 @@
 <h2>Add User</h2>
+
+<ul *ngIf="formSubmitted">
+  <li *ngIf="myForm.get('name')?.errors?.['required']"> Le nom est obligatoire, merci</li>
+  <li *ngIf="myForm.get('username')?.errors?.['required']"> Le username est obligatoire, merci</li>
+  <li *ngIf="myForm.get('username')?.errors?.['minlength']"> Le username est trop court, merci</li>
+</ul>
+
 <form [formGroup]="myForm" (ngSubmit)="submitForm()">
   <div>
     <label for="theName">Name</label>
@@ -13,5 +20,6 @@
 </form>
 
 <pre>
+    {{myForm.valid}}
   {{myForm.value| json}}
 </pre>

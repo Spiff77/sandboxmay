@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../user.service';
 
 @Component({
@@ -10,6 +10,7 @@ import {UserService} from '../user.service';
 export class AddUserComponent implements OnInit{
 
   myForm!: FormGroup
+  formSubmitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -18,14 +19,17 @@ export class AddUserComponent implements OnInit{
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      name: '',
-      username:''
+      name: ['', Validators.required],
+      username:['', [Validators.required, Validators.minLength(3)]]
     })
   }
 
   submitForm() {
-    console.log(this.myForm.value)
-    this.userService.add(this.myForm.value).subscribe()
+    this.formSubmitted = true;
+    if(this.myForm.valid){
+      this.userService.add(this.myForm.value).subscribe()
+      console.log(this.myForm.value)
+    }
   }
 }
 /*
