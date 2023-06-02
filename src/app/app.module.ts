@@ -14,6 +14,13 @@ import {RouterModule, Routes} from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { SayHelloComponent } from './say-hello/say-hello.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MusicdialogComponent } from './musicdialog/musicdialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {DialogModule} from '@angular/cdk/dialog';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -36,12 +43,19 @@ const routes: Routes = [
     MenuComponent,
     SayHelloComponent,
     AddUserComponent,
+    MusicdialogComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    DialogModule,
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

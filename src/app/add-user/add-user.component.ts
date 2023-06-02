@@ -39,6 +39,10 @@ export class AddUserComponent implements OnInit{
       console.log(this.myForm.value)
     }
   }
+
+  getFormGroup(): FormGroup{
+    return (this.myForm.get("boss") as FormGroup)
+  }
 }
 /*
 

@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Select you musical style</h1>
+<div mat-dialog-content>
+  <p>What's your favorite music type?</p>
+    <mat-label>Favorite Animal</mat-label>
+    <form [formGroup]="zikForm">
+      <mat-checkbox formControlName="rock"> Rock </mat-checkbox>
+      <mat-checkbox formControlName="rap"> Rap </mat-checkbox>
+      <mat-checkbox formControlName="classique"> Classique </mat-checkbox>
+      <mat-checkbox formControlName="blues"> Blues </mat-checkbox>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  (click)="close()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="zikForm.value">Ok</button>
+</div>

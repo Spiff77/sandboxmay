@@ -3,6 +3,8 @@ import {Person} from './model/person.model';
 import {NameService} from './name.service';
 import {BehaviorSubject, filter, interval, map, Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {MatDialog} from '@angular/material/dialog';
+import {MusicdialogComponent} from './musicdialog/musicdialog.component';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +12,6 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-
-
-
-
-
-
-
 
   title = 'Ma sandbox'
   name = 'Thomas Lhomme'
@@ -34,7 +29,7 @@ export class AppComponent implements OnInit{
 
   color = 'blue';
 
-  constructor(private nameService: NameService, private http: HttpClient) {}
+  constructor(private matDialog: MatDialog,private nameService: NameService, private http: HttpClient) {}
 
   ngOnInit() {
 
@@ -53,5 +48,10 @@ export class AppComponent implements OnInit{
     this.color = (event.target as HTMLInputElement).value
   }
 
-
+  openDialog(){
+   let dialogRef =  this.matDialog.open(MusicdialogComponent)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 }

@@ -24,7 +24,6 @@ export class UsersComponent implements OnInit, OnDestroy{
   constructor(private nameService: NameService, private uService: UserService) {}
 
   ngOnInit(): void {
-    this.subscription = interval(1000).subscribe(v => console.log(v))
 
     this.uService.findAll().pipe(
       map(v => {

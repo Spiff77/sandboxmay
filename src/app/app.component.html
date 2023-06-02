@@ -3,7 +3,7 @@
   <li *ngFor="let n of names">{{n}}</li>
 </ul>
 <h2>Count: {{count}}</h2>
-<button (click)="increaseCount()">increase</button>
+<button (click)="increaseCount()" mat-raised-button color="primary">increase</button>
 <p [style.color]="color">{{name}}</p>
 <!-- <input type="text" [(ngModel)]="color"> -->
 <input type="text" (input)="changeColor($event)">
@@ -11,3 +11,4 @@
 <app-secondary-parent></app-secondary-parent>-->
 <app-menu></app-menu>
 <router-outlet></router-outlet>
+<button (click)="openDialog()">Choisir le genre musical</button>
